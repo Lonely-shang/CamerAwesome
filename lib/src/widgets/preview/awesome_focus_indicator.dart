@@ -13,8 +13,8 @@ class AwesomeFocusIndicator extends StatelessWidget {
       child: TweenAnimationBuilder<double>(
         key: ValueKey(position),
         tween: Tween<double>(
-          begin: 80,
-          end: 50,
+          begin: 100,
+          end: 75,
         ),
         duration: const Duration(milliseconds: 2000),
         curve: Curves.fastLinearToSlowEaseIn,
@@ -83,7 +83,7 @@ class AwesomeFocusPainter extends CustomPainter {
       Paint()
         ..color = Colors.white
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.5
+        ..strokeWidth = 4.0
         ..strokeJoin = StrokeJoin.round
         ..strokeCap = StrokeCap.round,
     );
@@ -91,7 +91,6 @@ class AwesomeFocusPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant AwesomeFocusPainter oldDelegate) {
-    return rectSize != oldDelegate.rectSize ||
-        tapPosition != oldDelegate.tapPosition;
+    return rectSize != oldDelegate.rectSize || tapPosition != oldDelegate.tapPosition;
   }
 }

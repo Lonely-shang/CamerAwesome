@@ -139,8 +139,8 @@ data class CameraXState(
                 previews!!.add(preview)
 
                 if (currentCaptureMode == CaptureModes.PHOTO) {
-                    val imageCapture = ImageCapture.Builder().setCameraSelector(cameraSelector)
-//                .setJpegQuality(100)
+                    val imageCapture = ImageCapture.Builder().setMaxResolution(Size(2500,2500)).setCameraSelector(cameraSelector)
+                .setJpegQuality(100)
                         .apply {
                             //photoSize?.let { setTargetResolution(it) }
                             if (rational.denominator != rational.numerator) {
@@ -212,8 +212,8 @@ data class CameraXState(
             }
 
             if (currentCaptureMode == CaptureModes.PHOTO) {
-                val imageCapture = ImageCapture.Builder().setCameraSelector(cameraSelector)
-//                .setJpegQuality(100)
+                val imageCapture = ImageCapture.Builder().setMaxResolution(Size(2500,2500)).setCameraSelector(cameraSelector)
+                .setJpegQuality(100)
                     .apply {
                         //photoSize?.let { setTargetResolution(it) }
                         if (rational.denominator != rational.numerator) {
